@@ -14,6 +14,19 @@
 				<p>The name is <span data-ng-bind="firstName"></span></p>
 
 			</div>
+
+			<div ng-init="names=[
+								{name:'Jani',country:'Norway'},
+								{name:'Hege',country:'Sweden'},
+								{name:'Kai',country:'Denmark'}]">
+			  <p>Looping with ng-repeat:</p>
+			  <ul>
+			    <li ng-repeat="x in names">
+					{{ x.name + ', ' + x.country }}
+			    </li>
+			  </ul>
+			</div>
+
 		</div>
 
 	</body>

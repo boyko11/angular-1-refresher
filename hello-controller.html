@@ -2,22 +2,39 @@
 <html lang="en-US">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<body>
-		<div ng-app="myApp" ng-controller="myCtrl">
+		<div ng-app="myApp">
 
-			First Name: <input type="text" ng-model="firstName"><br>
-			Last Name: <input type="text" ng-model="lastName"><br>
-			<br>
-			Full Name: {{firstName + " " + lastName}}
+			<div data-ng-controller="nameController">
+
+				First Name: <input type="text" ng-model="firstName"><br>
+				Last Name: <input type="text" ng-model="lastName"><br>
+				<br>
+				Full Name: {{firstName + " " + lastName}}
+			</div>
+			<div data-ng-controller="personDataController">
+				<div>
+					<span> SSN: </span>
+					<span data-ng-bind="ssn"></span>
+				</div>
+				<div>
+					<span> DOB: </span>
+					<span data-ng-bind="dob"></span>
+				</div>
+			</div>
 
 		</div>
 
 		<script>
 			var app = angular.module('myApp', []);
-			app.controller('myCtrl', function($scope) {
+			app.controller('nameController', function($scope) {
 			    $scope.firstName= "John";
 			    $scope.lastName= "Doe";
 			});
+			app.controller('personDataController', function($scope) {
+			    $scope.ssn= "123456789";
+			    $scope.dob= "01/01/1990";
+			});			
 		</script>
 
 	</body>
-</html
+</html>

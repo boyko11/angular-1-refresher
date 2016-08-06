@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<body>
+
+		<div ng-app="myApp" boyko-directive id="testId123"></div>
+
+		<script>
+			var app = angular.module("myApp", []);
+			app.directive("boykoDirective", function() {
+			    return {
+			        template : "I was made in a directive constructor!"
+			    };
+			});
+		</script>
+
+	</body>
+</html>
