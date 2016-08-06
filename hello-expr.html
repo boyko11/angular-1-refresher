@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<body>
+
+		<div ng-app="" >
+
+			<div>Enter background color for the next div:
+			    <input type="text" ng-model="myCol" />
+		    </div>
+   
+			<div style="background-color:{{myCol}}" ng-bind="myCol + ' ' + myCol">
+			</div>
+
+		</div>
+
+	</body>
+</html>
