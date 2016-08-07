@@ -9,7 +9,7 @@
 				First Name: <input type="text" ng-model="firstName"><br>
 				Last Name: <input type="text" ng-model="lastName"><br>
 				<br>
-				Full Name: {{firstName + " " + lastName}}
+				Full Name: {{fullName()}}
 			</div>
 			<div data-ng-controller="personDataController">
 				<div>
@@ -27,8 +27,12 @@
 		<script>
 			var app = angular.module('myApp', []);
 			app.controller('nameController', function($scope) {
-			    $scope.firstName= "John";
-			    $scope.lastName= "Doe";
+			    $scope.firstName = "John";
+			    $scope.lastName = "Doe";
+			    $scope.fullName = function() {
+
+			        return $scope.firstName + " " + $scope.lastName;
+			    }
 			});
 			app.controller('personDataController', function($scope) {
 			    $scope.ssn= "123456789";
