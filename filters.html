@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<body>
+
+		<div ng-app="myApp" ng-controller="personCtrl">
+
+			<div>
+				<input type="text" ng-model="filterByValue">
+			</div>
+			<div>
+				<input type="radio" name="orderPeopleByField" value="name" ng-click="orderByField('name')"> Name<br>
+  				<input type="radio" name="orderPeopleByField" value="country" ng-click="orderByField('country')"> Country<br>
+  				<input type="radio" name="orderPeopleByField" value="age" ng-click="orderByField('age')"> Age<br>
+			</div>
+
+			<ul>
+				
+				<li ng-repeat="person in peopleList | orderBy:'country' | filter : {name: filterByValue} | orderBy:fieldToOrderBy">
+					{{person.name | uppercase}} {{' - ' + person.country + ' - ' + person.age}}
+				</li>
+
+			</ul>
+
+		</div>
+
+		<script>
+			angular.module('myApp', []).controller('personCtrl', function($scope) {
+		        $scope.peopleList = [
+			        {name:'Jani',country:'Norway',age: 15},
+			        {name:'Carl',country:'Sweden',age: 33},
+			        {name:'Margareth',country:'England',age: 54},
+			        {name:'Hege',country:'Norway',age: 65},
+			        {name:'Joe',country:'Denmark',age: 39},
+			        {name:'Gustav',country:'Sweden',age: 21},
+			        {name:'Birgit',country:'Denmark',age: 45},
+			        {name:'Mary',country:'England',age: 35},
+			        {name:'Kai',country:'Norway',age: 25}
+			        ];
+			        $scope.orderByField = function(fieldName) {
+			        	$scope.fieldToOrderBy = fieldName;
+			        }
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Jani",
+    "country": "Norway",
+    "age": 15
+  },
+  {
+    "name": "Carl",
+    "country": "Sweden",
+    "age": 33
+  },
+  {
+    "name": "Margareth",
+    "country": "England",
+    "age": 54
+  },
+  {
+    "name": "Hege",
+    "country": "Norway",
+    "age": 65
+  },
+  {
+    "name": "Joe",
+    "country": "Denmark",
+    "age": 39
+  },
+  {
+    "name": "Gustav",
+    "country": "Sweden",
+    "age": 21
+  },
+  {
+    "name": "Birgit",
+    "country": "Denmark",
+    "age": 45
+  },
+  {
+    "name": "Mary",
+    "country": "England",
+    "age": 35
+  },
+  {
+    "name": "Kai",
+    "country": "Norway",
+    "age": 25
+  }
+]
